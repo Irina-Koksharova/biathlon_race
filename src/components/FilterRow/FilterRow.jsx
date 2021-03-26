@@ -1,11 +1,14 @@
+import filter from 'initial/filter';
 import Filter from 'components/Filter';
 import Select from 'components/Select';
 
-const FilterRow = () => {
+const FilterRow = ({ onChangeFilter }) => {
+    const { NAME, COUNTRY } = filter
+    
     return (
         <tr>
-            <Filter />
-            <Filter />
+            <Filter id={NAME} onChangeFilter={onChangeFilter} />
+            <Filter id={COUNTRY} onChangeFilter={onChangeFilter} />
             <Select />
             <Select/>
         </tr>

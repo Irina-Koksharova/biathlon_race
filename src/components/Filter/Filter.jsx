@@ -1,13 +1,12 @@
 import s from './Filter.module.css';
 
-const Filter = () => {
+const Filter = ({id, onChangeFilter}) => {
     return (
         <td>
             <input
                 className={s.input}
-                id="input"
-                        // value={value}
-                        // onChange={onFilter}
+                id={id}
+                onChange={onChangeFilter}
                 autoComplete="off"
             />
         </td>
