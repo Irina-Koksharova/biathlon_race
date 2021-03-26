@@ -1,4 +1,6 @@
-const TableBody = ({data}) => {
+import { getPoints } from 'services/functions';
+
+const TableBody = ({ data }) => {
     return (
         <>
             {data.map(({ name, country, rateOfFire, numberOfHits }) => (
@@ -7,6 +9,7 @@ const TableBody = ({data}) => {
                     <td>{country}</td>
                     <td>{rateOfFire}</td>
                     <td>{numberOfHits}</td>
+                    <td>{getPoints(rateOfFire, numberOfHits)}</td>
                 </tr>
             ))}
         </>

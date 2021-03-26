@@ -1,5 +1,12 @@
 import { useState } from 'react';
 import s from './Table.module.css';
+import {
+    getPoints,
+    getSortedFinalResults,
+    getFiteredResults,
+    getSortedByAscending,
+    getSortedByDescending
+} from 'services/functions';
 import tableHeader from 'initial/table-header';
 import initialResults from 'initial/data.json';
 import filter from 'initial/filter';
@@ -13,24 +20,22 @@ const Table = () => {
     const [countryfilter, setCountryFilter] = useState('')
     const { NAME, COUNTRY } = filter
 
+    const finalResults = initialResults.map((participant) => (
+        {...participant, totalPoints: getPoints(participant.rateOfFire, participant.numberOfHits)}
+    ))
+    const filterByName = getFiteredResults(finalResults.sort(getSortedFinalResults), NAME, namefilter)    
+    const filterByCountry = getFiteredResults(filterByName, COUNTRY, countryfilter)
+
     const onChangeFilter = (e) => {
         e.target.id === NAME
             ? setNameFilter(e.target.value)
             : setCountryFilter(e.target.value)
     }
 
-    const getNormalizedFilter = (value) => {
-        return value.toLowerCase();
+    const getSelectValue = (e) => {
+        console.log(e.target.value)
+        // e.target.value === 'descending' ? getSortedByDescending() : getSortedByAscending()
     }
-
-    const getFiteredResults = (initialData, filteredValue, filterType) => {
-        return initialData.filter(result =>
-        result[filteredValue].toLowerCase().includes(getNormalizedFilter(filterType)),
-    );
-    }
-
-    const filterByName = getFiteredResults(initialResults, NAME, namefilter)    
-    const filterByCountry = getFiteredResults(filterByName, COUNTRY, countryfilter)
 
     return (
         <table className={s.table}>
@@ -39,6 +44,7 @@ const Table = () => {
             <tbody>
                 <FilterRow
                     onChangeFilter={onChangeFilter}
+                    onChangeSelect={getSelectValue}
                 />
                 <TableBody data={filterByCountry} />
             </tbody>

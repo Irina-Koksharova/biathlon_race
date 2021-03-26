@@ -1,9 +1,9 @@
 import s from './Select.module.css';
 
-const Select = () => {
+const Select = ({onChangeSelect}) => {
     return (
         <td>
-            <select className={s.select}>
+            <select className={s.select} onChange={onChangeSelect}>
                 <option>ascending</option>
                 <option>descending</option>
             </select>

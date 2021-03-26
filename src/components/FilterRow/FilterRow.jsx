@@ -2,7 +2,7 @@ import filter from 'initial/filter';
 import Filter from 'components/Filter';
 import Select from 'components/Select';
 
-const FilterRow = ({ onChangeFilter }) => {
+const FilterRow = ({ onChangeFilter, onChangeSelect }) => {
     const { NAME, COUNTRY } = filter
     
     return (
@@ -10,7 +10,8 @@ const FilterRow = ({ onChangeFilter }) => {
             <Filter id={NAME} onChangeFilter={onChangeFilter} />
             <Filter id={COUNTRY} onChangeFilter={onChangeFilter} />
             <Select />
-            <Select/>
+            <Select />
+            <Select onChangeSelect={onChangeSelect}/>
         </tr>
     )
 }
