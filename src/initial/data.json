@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "name": "Scott Gow",
+    "country": "Canada",
+    "rateOfFire": 25.4,
+    "numberOfHits": 13
+  },
+  {
+    "id": 2,
+    "name": "Aidan Millar",
+    "country": "Canada",
+    "rateOfFire": 25.4,
+    "numberOfHits": 17
+  },
+  {
+    "id": 3,
+    "name": "Dmitry Pidruchny",
+    "country": "Ukraine",
+    "rateOfFire": 25.8,
+    "numberOfHits": 14
+  },
+  {
+    "id": 4,
+    "name": "Tommaso Giacomel",
+    "country": "Italy",
+    "rateOfFire": 25.3,
+    "numberOfHits": 18
+  },
+  {
+    "id": 5,
+    "name": "Artem Tishchenko",
+    "country": "Ukraine",
+    "rateOfFire": 26.1,
+    "numberOfHits": 15
+  },
+  {
+    "id": 6,
+    "name": "Bohdan Tsymbal",
+    "country": "Ukraine",
+    "rateOfFire": 26.5,
+    "numberOfHits": 20
+  },
+  {
+    "id": 7,
+    "name": "Adam Runnells",
+    "country": "Canada",
+    "rateOfFire": 26.4,
+    "numberOfHits": 16
+  },
+  {
+    "id": 8,
+    "name": "Endre Stremsheim",
+    "country": "Sweden",
+    "rateOfFire": 23.5,
+    "numberOfHits": 19
+  },
+  {
+    "id": 9,
+    "name": "Yakko Olavi Ranta",
+    "country": "Finland",
+    "rateOfFire": 24.6,
+    "numberOfHits": 19
+  },
+  {
+    "id": 10,
+    "name": "Lucas Fratzscher",
+    "country": "Germany",
+    "rateOfFire": 26.3,
+    "numberOfHits": 17
+  }
+]
