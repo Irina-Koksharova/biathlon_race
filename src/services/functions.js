@@ -3,8 +3,6 @@ const getPoints = (time, quantity) => {
         return totalPoints
 }
 
-const getSortedFinalResults = (a, b) => b.totalPoints - a.totalPoints
-
 const getNormalizedFilter = (value) => {
         return value.toLowerCase();
 }
@@ -14,16 +12,47 @@ const getFiteredResults = (initialData, filteredValue, filterType) => {
         result[filteredValue].toLowerCase().includes(getNormalizedFilter(filterType)),
         );
 }
-    
-const getSortedByAscending = (a, b) => a - b
 
-const getSortedByDescending = (a, b) => b - a
+const getSortedNameByAscending = (a, b) => {
+        const nameA = a.name.toLowerCase();
+        const nameB = b.name.toLowerCase();
+        if (nameA < nameB) {
+                return -1;
+        }
+        if (nameA > nameB) {
+                return 1;
+        }
+        return 0;
+}
+
+const getSortedNameByDescending = (a, b) => {
+        const nameA = a.name.toLowerCase();
+        const nameB = b.name.toLowerCase();
+        if (nameA < nameB) {
+                return 1;
+        }
+        if (nameA > nameB) {
+                return -1;
+        }
+        return 0;
+}
+    
+const getSortedByAscending = (property) => {
+        const getSortedList = (a, b) => a[`${property}`] - b[`${property}`]
+        return getSortedList
+}
+
+const getSortedByDescending = (property) => {
+        const getSortedList = (a, b) => b[`${property}`] - a[`${property}`]
+        return getSortedList
+}
     
 export {
-    getPoints,
-    getSortedFinalResults,
-    getNormalizedFilter,
-    getFiteredResults,
-    getSortedByAscending,
-    getSortedByDescending
+        getPoints,
+        getNormalizedFilter,
+        getFiteredResults,
+        getSortedNameByAscending,
+        getSortedNameByDescending,
+        getSortedByAscending,
+        getSortedByDescending
 }

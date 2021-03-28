@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import s from './TableHead.module.css';
 
 const TableHead = ({ data }) => {
@@ -15,5 +16,9 @@ const TableHead = ({ data }) => {
         </thead>
     )
 }
+
+TableHead.propTypes = {
+  data: PropTypes.objectOf(PropTypes.string).isRequired,
+};
     
-export default TableHead
+export default TableHead;

@@ -1,16 +1,19 @@
+import PropTypes from 'prop-types';
 import s from './Filter.module.css';
 
-const Filter = ({id, onChangeFilter}) => {
+const Filter = ({ onChangeFilter }) => {
     return (
-        <td>
-            <input
-                className={s.input}
-                id={id}
-                onChange={onChangeFilter}
-                autoComplete="off"
-            />
-        </td>
+        <input
+            className={s.input}
+            onChange={onChangeFilter}
+            placeholder='Search by name'
+            autoComplete="off"
+        />
     )
 }
+
+Filter.propTypes = {
+  onChangeFilter: PropTypes.func.isRequired,
+};
     
-export default Filter
+export default Filter;
